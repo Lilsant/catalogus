@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Folder System</title>
+  </head>
+  <body>
+    <div class="catalog">
+      <div class="catalog__top">
+        <div class="catalog__nav">
+          <a class="catalog__nav-link"
+            ><img class="catalog__nav-icon" id="back" src="./img/arrow.svg"
+          /></a>
+          <a class="catalog__nav-link"
+            ><img class="catalog__nav-icon" id="next" src="./img/arrow.svg"
+          /></a>
+          <a class="catalog__nav-link"
+            ><img class="catalog__nav-icon" id="expand" src="./img/expand-icon.svg"
+          /></a>
+          <a class="catalog__nav-link"
+            ><img class="catalog__nav-icon" id="root" src="./img/arrow.svg"
+          /></a>
+        </div>
+        <div class="catalog__adress">
+            <img class="catalog__adress-icon" src="/img/folder.png" />
+          <input type="text" class="catalog__adress-input" />
+          <img class="catalog__adress-expand" src="/img/expand-icon.svg" />
+          <button class="catalog__adress-button">
+            <img class="catalog__adress-repair" src="img/refresh-icon.svg" />
+          </button>
+        </div>
+        <div class="catalog__search">
+            <input class="catalog__search-input" type="text" placeholder="Search..."/>
+            <img class="catalog__search-icon" src="./img/search.svg">
+        </div>
+    </div>
+    <div class="catalog__main"></div>
+    <div class="catalog__footer">
+        <span><span class="catalog__footer-value" id="items-count"></span> items</span>
+    </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

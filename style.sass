@@ -1,0 +1,99 @@
+*
+    box-sizing: border-box
+    padding: 0
+    margin: 0
+
+#next
+    transform: rotate(180deg)
+
+#root
+    transform: rotate(90deg)
+
+body
+    background-color: #222
+
+.catalog
+    background-color: white
+    width: fit-content
+    padding: 10px 20px
+
+.catalog__top
+    display: flex
+
+.catalog__nav-icon 
+    width: 20px
+    height: 20px
+    cursor: pointer
+
+.catalog__adress
+    position: relative
+    &-icon
+        width: 18px
+        height: 18px
+        position: absolute
+        left: 3px
+        top: 0
+    &-expand
+        width: 15px
+        height: 15px
+        position: absolute
+        top: 3px
+        right: 0
+    &-button
+        width: 20px
+        position: absolute
+        top: 0
+        right: -20px
+        height: 20px
+        border-radius: 0
+        border: 1px solid gray
+        background-color: transparent
+    &-repair
+        width: 15px
+        height: 15px
+    &-input
+        width: 200px
+        height: 20px
+        padding-left: 22px
+    
+.catalog__search
+    position: relative
+    margin-left: 30px
+    &-icon
+        position: absolute
+        top: 0
+        right: 3px
+        width: 18px
+        height: 18px
+
+.catalog__element
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 5px 10px
+    cursor: pointer
+    max-width: 80px
+    &:hover
+        background-color: #8894db42
+    &-name
+        max-width: 80px
+        overflow: hidden
+        &-input
+            width: 80px
+
+.panel
+    display: flex
+    flex-direction: column
+    background-color: #f5f5f5
+    &__item
+        padding: 10px 10px
+        cursor: pointer
+        &:hover
+            background-color: #e9e8e8
+
+.catalog__main
+    display: flex
+    max-width: 480px
+    flex-wrap: wrap
+    margin-bottom: 100px
