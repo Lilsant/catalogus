@@ -121,4 +121,8 @@ body {
   max-width: 480px;
   flex-wrap: wrap;
   margin-bottom: 100px;
+}
+
+.catalog__nav {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */
