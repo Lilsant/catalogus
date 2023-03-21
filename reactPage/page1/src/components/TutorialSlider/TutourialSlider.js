@@ -52,7 +52,15 @@ export default function TutourialSlider({ changeVis }) {
   }
   const title = function () {
     return (
-      <h2 className="tutorial__slider-title">{info[currentPage].title}</h2>
+      <h2
+        className={
+          currentPage >= 2
+            ? "tutorial__slider-title"
+            : "tutorial__slider-title tutorial__slider-title--big"
+        }
+      >
+        {info[currentPage].title}
+      </h2>
     );
   };
   const itemsList = function () {
@@ -60,13 +68,19 @@ export default function TutourialSlider({ changeVis }) {
       <ul className="tutorial__list">
         {info[currentPage].listItems.map((el) => {
           console.log(el);
-          if (currentPage == 3)
+          if (currentPage === 3)
             return (
               <>
                 <li className="tutorial__list-item">{el}</li>
 
                 <Description />
               </>
+            );
+          if (currentPage === 0)
+            return (
+              <li className="tutorial__list-item tutorial__list-item--large">
+                {el}
+              </li>
             );
           return <li className="tutorial__list-item">{el}</li>;
         })}
