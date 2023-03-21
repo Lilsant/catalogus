@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import TutourialSlider from "./components/TutourialSlider";
+import TutourialSlider from "../components/TutorialSlider/TutourialSlider";
+import "./Tutorial.css";
 import logo from "./logo.png";
-import "./Page.css";
 
-export default function Page() {
+export default function Tutorial() {
   const [isBtnClicked, setIsBtnClicked] = useState(false);
   return (
-    <div className="tutorial">
+    <div className="tutorial ">
       <div className="container">
         <div className="tutorial__inner">
           <img className="tutorial__logo" src={logo} alt="logo" />

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import arrow from "./arrow.svg";
-import telegram from "./telegram.png";
-import discord from "./discord.png";
-import instagram from "./instagram.png";
-import vk from "./vk.png";
+import arrow from "./images/arrow.svg";
+import telegram from "./images/telegram.png";
+import discord from "./images/discord.png";
+import instagram from "./images/instagram.png";
+import vk from "./images/vk.png";
 
 import "./TutourialSlider.css";
 
@@ -60,6 +60,14 @@ export default function TutourialSlider({ changeVis }) {
       <ul className="tutorial__list">
         {info[currentPage].listItems.map((el) => {
           console.log(el);
+          if (currentPage == 3)
+            return (
+              <>
+                <li className="tutorial__list-item">{el}</li>
+
+                <Description />
+              </>
+            );
           return <li className="tutorial__list-item">{el}</li>;
         })}
       </ul>
@@ -69,29 +77,36 @@ export default function TutourialSlider({ changeVis }) {
     <div className="tutorial__slider">
       {title()}
       {itemsList()}
-      {currentPage === 3 ? <Description /> : null}
-      <div className="tutorial__button-cont">
-        <button
-          className="tutorial__button tutorial__button-arrow"
-          onClick={() => checkPage(currentPage, -1)}
-        >
-          <img
-            className="tutorial__btn-img--left"
-            src={arrow}
-            alt="arrow left"
-          ></img>
-        </button>
-        <button
-          className="tutorial__button tutorial__button-arrow"
-          onClick={() => checkPage(currentPage, 1)}
-        >
-          <img
-            className="tutorial__btn-img--rigth"
-            src={arrow}
-            alt="arrow rigth"
-          ></img>
-        </button>
-      </div>
+
+      {currentPage === 3 ? null : (
+        <div className="tutorial__button-cont">
+          {info[currentPage].link ? (
+            <a className="tutorial__links" href="#">
+              {info[currentPage].link}
+            </a>
+          ) : null}
+          <button
+            className="tutorial__button-arrow"
+            onClick={() => checkPage(currentPage, -1)}
+          >
+            <img
+              className="tutorial__btn-img--left"
+              src={arrow}
+              alt="arrow left"
+            ></img>
+          </button>
+          <button
+            className="tutorial__button-arrow"
+            onClick={() => checkPage(currentPage, 1)}
+          >
+            <img
+              className="tutorial__btn-img--rigth"
+              src={arrow}
+              alt="arrow rigth"
+            ></img>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
@@ -121,7 +136,12 @@ function Description() {
           />
         </a>
         <a>
-          <img className="tutorial__social-link" src={vk} alt="vk" />
+          <img
+            className="tutorial__social-link"
+            id="vk_icon"
+            src={vk}
+            alt="vk"
+          />
         </a>
       </div>
       <span className="tutorial__slider-text">Удачи и грандиозных побед!</span>
@@ -129,6 +149,9 @@ function Description() {
         С <a className="tutorial__slider-link">CORCU.RU</a>
         <br /> каждая секунда окупится!
       </span>
+      <div className="tutorial__button-cont tutorial__button-cont--full">
+        <button className="tutorial__button-main">К АУКЦИОНАМ</button>
+      </div>
     </div>
   );
 }
